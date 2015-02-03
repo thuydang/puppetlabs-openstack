@@ -12,7 +12,8 @@ class openstack::resources::repo::erlang {
     yumrepo { 'erlang-solutions':
       name     => 'erlang-solutions',
       descr    => 'Erlang Solutions Repository',
-      baseurl  => "http://binaries.erlang-solutions.com/rpm/${dist}/${osver}/x86_64",
+      #baseurl  => "http://binaries.erlang-solutions.com/rpm/${dist}/${osver}/x86_64",
+      baseurl  => "http://binaries.erlang-solutions.com/rpm/centos/7/x86_64",
       gpgcheck => 0,
       gpgkey   => 'http://binaries.erlang-solutions.com/debian/erlang_solutions.asc',
       enabled  => 1,

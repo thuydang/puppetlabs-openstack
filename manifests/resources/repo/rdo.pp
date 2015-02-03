@@ -3,6 +3,7 @@ class openstack::resources::repo::rdo(
   $release = 'icehouse'
 ) {
   include openstack::resources::repo::epel
+  include openstack::resources::repo::yum_refresh
 
   $release_cap = capitalize($release)
 
