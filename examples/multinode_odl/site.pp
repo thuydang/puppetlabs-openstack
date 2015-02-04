@@ -9,7 +9,7 @@ node 'puppet' {
   }
 }
 
-node 'devcontroller.localdomain' {
+node 'devcontroller' {
   include ::openstack::role::controller
 }
 
