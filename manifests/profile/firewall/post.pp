@@ -6,6 +6,12 @@ class openstack::profile::firewall::post {
     action => 'accept',
     source => $::openstack::config::network_management,
   } ->
+  firewall { '9050 - Accept all api network traffic':
+    proto  => 'all',
+    state  => ['NEW'],
+    action => 'accept',
+    source => $::openstack::config::network_api,
+  } ->
   firewall { '9100 - Accept all vm network traffic':
     proto  => 'all',
     state  => ['NEW'],
