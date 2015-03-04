@@ -254,3 +254,13 @@ Install erlang first by hand
 ===== Reinstall Keystone =====
     yum erase openstack-keystone
     puppet apply --verbose /etc/puppet/manifests/site.pp
+    
+===== Neutron not starts first time after installed =====
+One who attempts to intall Neutron on Juno without running a neutron-db-manage will no be able to start neutron-server and may see the following error or similar in /var/log/neutron/server.log:
+
+ProgrammingError: (ProgrammingError) (1146, "Table 'neutron.ml2_gre_allocations' doesn't exist") 'SELECT ml2_gre_allocations.gre_id AS ml2_gre_allocations_gre_id, ml2_gre_allocations.allocated AS ml2_gre_allocations_allocated \nFROM ml2_gre_allocations' ()
+
+To fix the issue, run the following prior to starting neutron-server:
+
+    sudo neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade juno
+Credit: http://www.madorn.com/juno-neutron-server-not-starting.html#.VPcHF8tXaCg
