@@ -5,6 +5,10 @@
   * https://forge.puppetlabs.com/puppetlabs/openstack#setup-requirements
   * http://behindtheracks.com/2014/11/openstack-juno-scripted-install-with-neutron-on-centos-7/
 
+====== Network Infrastructure ======
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/5/html/Cloud_Administrator_Guide/section_networking-arch.html
+
+
 **Note** This same procedure is tested with 2 Nodes Controller + Compute and Controller+Compute+Network.
 Test with ODL not succesful.
 ====== Infrastructure description ======
